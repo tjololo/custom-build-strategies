@@ -6,8 +6,7 @@ if [ ! -e "${DOCKER_SOCKET}" ]; then
   exit 1
 fi
 cd /maven
-MAVEN_SOURCE_DIR=sources
-mkdir -p ${MAVEN_SOURCE_DIR}
+MAVEN_SOURCE_DIR=$(mktemp -d)
 git clone --recursive ${SOURCE_REPOSITORY} ${MAVEN_SOURCE_DIR}
 if [ $? != 0 ]; then
         echo "Error trying to fetch git srouce: ${SOURCE_REPOSITORY}"
@@ -30,6 +29,6 @@ if [ -n "${SOURCE_CONTEXT_DIR}" ]; then
         cd ..
 fi
 cd ..
-cp Dockerfile ${DOCKER_SOURCE_DIR}
+cp ${STRATEGY_FOLDER/maven/Dockerfile ${DOCKER_SOURCE_DIR}
 echo "maven strategy done"
 cd ..
