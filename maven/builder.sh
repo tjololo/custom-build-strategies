@@ -23,6 +23,10 @@ if [ -n "${SOURCE_CONTEXT_DIR}" ]; then
         cd ${SOURCE_CONTEXT_DIR}
 fi
 mvn clean install -DskipTests=true
+if [ $? != 0 ]; then
+	echo "Maven build exited with error"
+	exit 1
+fi
 rm -f target/*sources.jar
 mv target/*.jar ${DOCKER_SOURCE_DIR}/app.jar
 if [ -n "${SOURCE_CONTEXT_DIR}" ]; then
@@ -30,5 +34,8 @@ if [ -n "${SOURCE_CONTEXT_DIR}" ]; then
 fi
 cd ..
 cp ${STRATEGY_FOLDER}/maven/Dockerfile ${DOCKER_SOURCE_DIR}
+if [ $? != 0 ]; then
+	echo "Could not copy Dockerfile"
+	exit 1
+fi
 echo "maven strategy done"
-cd ..
