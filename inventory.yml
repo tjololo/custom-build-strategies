@@ -1,0 +1,3 @@
+strategy:
+  maven: maven/builder.sh
+  gradle: gradle/builder.sh
