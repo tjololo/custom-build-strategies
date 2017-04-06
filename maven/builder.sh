@@ -29,6 +29,6 @@ if [ -n "${SOURCE_CONTEXT_DIR}" ]; then
         cd ..
 fi
 cd ..
-cp ${STRATEGY_FOLDER/maven/Dockerfile ${DOCKER_SOURCE_DIR}
+cp ${STRATEGY_FOLDER}/maven/Dockerfile ${DOCKER_SOURCE_DIR}
 echo "maven strategy done"
 cd ..
