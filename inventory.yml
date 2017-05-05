@@ -1,7 +1,5 @@
 strategy:
   maven:
     script: maven/builder.sh
-    image: java-base
   gradle:
     script: gradle/builder.sh
-    image: java-base
