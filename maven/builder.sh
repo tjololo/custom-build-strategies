@@ -33,9 +33,9 @@ if [ -n "${SOURCE_CONTEXT_DIR}" ]; then
         cd ..
 fi
 cd ..
-cp ${STRATEGY_FOLDER}/maven/Dockerfile ${DOCKER_SOURCE_DIR}
+cp ${STRATEGY_FOLDER}/maven/Dockerfile.part ${DOCKER_SOURCE_DIR}
 if [ $? != 0 ]; then
-	echo "Could not copy Dockerfile"
+	echo "Could not copy Dockerfile.part"
 	exit 1
 fi
 echo "maven strategy done"

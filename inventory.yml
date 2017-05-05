@@ -1,3 +1,7 @@
 strategy:
-  maven: maven/builder.sh
-  gradle: gradle/builder.sh
+  maven:
+    script: maven/builder.sh
+    image: java-base
+  gradle:
+    script: gradle/builder.sh
+    image: java-base
