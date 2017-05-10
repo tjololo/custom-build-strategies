@@ -1,5 +1,5 @@
 #!/bin/ash
-echo "Running gradlen strategy"
+echo "Running gradle wrapper strategy"
 echo "Docker tmp dir: ${DOCKER_SOURCE_DIR}"
 if [ ! -e "${DOCKER_SOCKET}" ]; then
   echo "Docker socket missing at ${DOCKER_SOCKET}"
