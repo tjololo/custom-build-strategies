@@ -3,3 +3,5 @@ strategy:
     script: maven/builder.sh
   gradle:
     script: gradle/builder.sh
+  gradlew:
+    script: gradlew/builder.sh
